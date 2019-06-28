@@ -6,7 +6,7 @@ python kiosk_start.py
 
 ### 首頁
 
-![index](.\md_image\index.png)
+![index](https://raw.githubusercontent.com/96gen/kiosk/master/md_image/index.png)
 
 ### 點餐介面
 
