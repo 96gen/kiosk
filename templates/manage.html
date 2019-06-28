@@ -1,0 +1,29 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $(".delete").click(function() {
+              var id = $(this).attr('id'); // $(this) refers to button that was clicked
+              $.ajax({
+                url:'/delete',
+                type:'POST',
+                data:JSON.stringify({'id':id}),
+                dataType: 'json',
+              })
+              location.href=location.href;
+          });
+        });
+</script>
+<link href="/static/table.css" rel="stylesheet" type="text/css" />
+<div class="divTable">
+<div class="divTableBody"> 
+    <div class="divTableRow">
+        <div class="divTableCell">ID</div>
+        <div class="divTableCell">Time</div>
+        <div class="divTableCell">Meal</div>
+        <div class="divTableCell">Price</div>
+        <div class="divTableCell">Discount</div>
+        <div class="divTableCell">People_number</div>
+        <div class="divTableCell">Table_number</div>
+        <div class="divTableCell">Bill_check</div>
+        <div class="divTableCell">Meal_serve</div>
+        </div>

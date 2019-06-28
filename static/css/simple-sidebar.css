@@ -1,0 +1,33 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+body{
+  font-family: 'Noto Sans TC', '微軟正黑體', sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+
+#sidebar-wrapper .list-group {
+  width: 10%;
+}
+
+#page-content-wrapper {
+  min-width: 0;
+  width: 100%;
+}
+
+.row {
+  padding: 15px;
+}
+
+.fixed {
+	position: fixed;
+	width:10%;
+  border: 3px solid #8AC007;
+  z-index: 99;
+  right:0px;
+  bottom:0px;
+  }
+
+.fixed input{
+  width:50%;
+}

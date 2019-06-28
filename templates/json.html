@@ -1,0 +1,14 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $(".done").click(function() {
+              var id = $(this).attr('id'); // $(this) refers to button that was clicked
+              $.ajax({
+                url:'/background_process_test',
+                type:'POST',
+                data:JSON.stringify({'id':id}),
+                dataType: 'json'
+              })
+          });
+        });
+</script>

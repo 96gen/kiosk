@@ -1,0 +1,40 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        var table_number;
+        $(function() {
+          $(".submit").click(function() {
+              table_number = $('.table_number')[0].value; // $(this) refers to button that was clicked
+              $.ajax({
+                url:'/bill_show',
+                type:'POST',
+                data:JSON.stringify({'table_number':table_number}),
+                dataType: 'json',
+                success:function(response){ 
+                  document.getElementsByClassName("form")[0].style.display = "none";
+                  document.getElementsByClassName("divTableBody")[0].innerHTML += "<br />" + response;
+                  document.getElementsByClassName("bill_check")[0].style.visibility = "";
+                }    
+              })
+          });
+          $(".bill_check").bind("click",function(){
+            $.ajax({
+                url:'/paid',
+                type:'POST',
+                data:JSON.stringify({'table_number':table_number}),
+                dataType: 'json'
+            })
+            document.body.innerHTML = "付款成功"+'<link href="/static/css/home.css" rel="stylesheet"><div class="home"><img src="/static/home.png" onclick="window.history.go(-1);"></div>';
+            
+          });
+        });
+</script>
+<div class="form">
+    Table number: <input class="table_number" type="text" />
+    <button class="submit">Submit</button>
+</div>
+<link href="/static/table.css" rel="stylesheet" type="text/css" />
+<div class="divTable">
+    <div class="divTableBody">
+    </div>
+</div>
+<button class="bill_check" style="visibility: hidden;">確認結帳</button>

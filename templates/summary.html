@@ -1,0 +1,26 @@
+<link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript>
+        $(function() {
+          $(".delete").click(function() {
+              var id = $(this).attr('id'); // $(this) refers to button that was clicked
+              $.ajax({
+                url:'/delete',
+                type:'POST',
+                data:JSON.stringify({'id':id}),
+                dataType: 'json',
+              })
+              location.href=location.href;
+          });
+        });
+</script>
+<link href="/static/table.css" rel="stylesheet" type="text/css" />
+<div class="divTable">
+<div class="divTableBody"> 
+    <div class="divTableRow">
+        <div class="divTableCell">日期</div>
+        <div class="divTableCell">營業額</div>
+        <div class="divTableCell">折扣金額</div>
+        <div class="divTableCell">來客數</div>
+        <div class="divTableCell">客單價</div>
+        </div>

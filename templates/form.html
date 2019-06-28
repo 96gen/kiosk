@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap core CSS -->
+  <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/static/css/simple-sidebar.css" rel="stylesheet">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type=text/javascript>
+ 
+          $(function() {
+            $(".col-md-4").click(function() {
+                var id = $(this).attr('id'); // $(this) refers to button that was clicked
+                document.getElementById("order_list").value += id + ";";
+            });
+          });
+  </script>
+
+</head>
+
+<body>
+
+  <div class="fixed">
+    <form action="{{ url_for('order') }}" method="post">
+      <input id="order_list" type="text" name="order_list" style="display:none;">
+      桌號:<input type="text" name="table_number"><br/>
+      人數:<input type="text" name="people_number"><br/>
+      <button name="order" value="order">點餐完畢</button>
+      <button id="preview" name="order" value="preview">預覽點菜結果</button>
+    </form>
+  </div>
+  <div class="d-flex" id="wrapper">
+
+
+    <div class="bg-light border-right" id="sidebar-wrapper">
+      <div class="list-group list-group-flush">
+        
+      
+    

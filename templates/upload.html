@@ -1,0 +1,8 @@
+<!doctype html>
+<form method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+    菜名:<input type="text" name="meal_name"><br/>
+    價格:<input type="text" name="price"><br/>
+    種類:<input type="text" name="kind"><br/>
+    圖片:<input type="file" name="photo"><br/>
+    <input type="submit" value="送出">
+</form>
